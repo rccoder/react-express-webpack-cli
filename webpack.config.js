@@ -2,9 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    var ejs = path.join(__dirname, '/client/src/App.js');
     entry: {
-        'app': [ejs, 'webpack/hot/dev-server', 'webpack-dev-server/client?http://127.0.0.1:3001']
+        'app': [path.join(__dirname, '/client/src/App.js'), 'webpack/hot/dev-server', 'webpack-dev-server/client?http://127.0.0.1:3001']
     },
     output: {
         path: path.join(__dirname, '/client/build'),

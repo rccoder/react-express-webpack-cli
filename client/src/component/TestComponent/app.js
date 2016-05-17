@@ -11,7 +11,7 @@ class TestComponent extends React.Component {
     render() {
         return (
             <AppBar
-                title="Title"
+                title="Jssust day"
                 iconClassNameRight="muidocs-icon-navigation-expand-more"
             />
         );

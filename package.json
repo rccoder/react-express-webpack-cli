@@ -1,25 +1,26 @@
 {
-  "name": "social-network-system",
+  "name": "react-express-webpack-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "react express webpack cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-build": "babel server/src/ -d server/build/",
-    "server-dev": "babel-node server/src/app.js",
     "client-build": "webpack",
-    "dev": "NODE_ENV=dev babel-node server/src/app.js"
+    "dev": "set NODE_ENV=dev && babel-node server/src/app.js",
+    "build": "npm run server-build && npm run client-build",
+    "start": "npm run server-build && npm run client-build && set NODE_ENV=production && node server/build/app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rccoder/social-network-system.git"
+    "url": "git+https://github.com/rccoder/react-express-webpack-cli.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rccoder/social-network-system/issues"
+    "url": "https://github.com/rccoder/react-express-webpack-cli/issues"
   },
-  "homepage": "https://github.com/rccoder/social-network-system#readme",
+  "homepage": "https://github.com/rccoder/react-express-webpack-cli#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",

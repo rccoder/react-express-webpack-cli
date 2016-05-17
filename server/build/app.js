@@ -35,12 +35,26 @@ var port = _server2.default.port; /**
                                    */
 
 
-var logDir = __dirname + '/logs';
-var accessLog = _fs2.default.createWriteStream(logDir + 'access.log');
-var errorLog = _fs2.default.createWriteStream(logDir + 'error.log');
+var logDir = _path2.default.join(__dirname, '/../logs/');
+var staticDir = _path2.default.join(__dirname, '/../../client');
+var webpackDevDir = _path2.default.join(__dirname, '/../../webpack.dev.server');
 
 var app = (0, _express2.default)();
 
+var accessLog = _fs2.default.createWriteStream(logDir + 'access.log');
+var errorLog = _fs2.default.createWriteStream(logDir + 'error.log');
+
+if (process.env.NODE_ENV == 'dev') {
+    console.log('running in dev');
+    require(webpackDevDir)(app);
+}
+
+app.use(_express2.default.static(staticDir));
+
+app.get('/', function (req, res) {
+    res.redict('index.html');
+});
+
 var server = app.listen(port, function () {
-  console.log('listening ' + port);
+    console.log('listening ' + port);
 });

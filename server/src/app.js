@@ -22,7 +22,8 @@ const accessLog = fs.createWriteStream(logDir + 'access.log');
 const errorLog = fs.createWriteStream(logDir + 'error.log');
 
 if(process.env.NODE_ENV == 'dev') {
-   require(webpackDevDir)(app);
+    console.log('running in dev')
+    require(webpackDevDir)(app);
 }
 
 app.use(express.static(staticDir));
