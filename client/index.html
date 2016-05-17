@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="http://127.0.0.1:3001/bundles.js"></script>
+    <script>
+        var WebFontConfig = {
+          google: { families: [ 'Roboto:400,300,500:latin' ] }
+        };
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <script src="build/bundle.js"></script>
+</body>
+
+</html>
