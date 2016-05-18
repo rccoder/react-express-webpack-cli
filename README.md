@@ -55,7 +55,7 @@ will use proxy and hot-load
 npm run dev
 ```
 
- ### License
+### License
 
 [MIT](http://opensource.org/licenses/MIT)
 
